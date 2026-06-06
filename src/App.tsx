@@ -197,7 +197,7 @@ function MusicButton() {
 
   return (
     <>
-      <button id="music-btn" onClick={toggle} title="Put an audio file named music.mp3 in the tsedu-site/public folder.">
+      <button id="music-btn" onClick={toggle}>
         🎵 <span>{label}</span>
       </button>
       <audio ref={audioRef} loop preload="auto">
