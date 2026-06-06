@@ -31,8 +31,10 @@ const RECENT_FILES = [
   'ice_2021-04-29-11-01-58-086.jpg', 'ice_2021-05-02-12-32-39-999.jpg', 'ice_2021-06-05-19-53-36-723.jpg',
 ];
 
-const url = (folder: string, file: string) =>
-  `${BASE}${folder}/${encodeURIComponent(file)}`;
+const url = (folder: string, file: string) => {
+  const base = BASE.endsWith('/') ? BASE : BASE + '/';
+  return `${base}${folder}/${encodeURIComponent(file)}`;
+};
 
 export const CHILD_PHOTOS: ImageData[] = CHILD_FILES.map((f, i) => ({
   id: `child-${i}`,
